@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Ma première page en React</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://unpkg.com/react@16.7.0/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16.7.0/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.26.0/babel.min.js"></script>
+    <style>
+      h1{
+          font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+      }
+      #title{
+        background-color: darkgreen;
+      } 
+      .heading{
+        color: white;
+      }  
+    </style>
+</script>
+  </head>
+  <body>
+    <div id="react-root"></div>
+    <script type="text/babel">
+
+    class BonjourClass extends React.Component {
+      render(){
+        return(
+          <div id="title">
+                 <h1 className="heading">{this.props.message}</h1>
+                 <p>Vous étudiez sur la version {this.props.version} de Réact</p>
+          </div>
+        )
+      }
+    }
+
+
+
+    const Bonjour = () => (
+          <div id="title">
+             <h1 className="heading">Bonjour de Réact</h1>
+          </div>    
+    )
+
+      ReactDOM.render(
+    <BonjourClass message="Bonjour de Réact" version={16}/>,
+        document.getElementById('react-root')
+    )
+    </script>
+  </body>
+</html>
