@@ -32,6 +32,14 @@
         this.state= {
           name: "David"
         }
+        this.handleChange = this.handleChange.bind(this)
+      }
+
+
+      handleChange(e){
+        this.setState({
+          name : e.target.value
+        })
       }
 
       render(){
@@ -39,7 +47,7 @@
           <div id="title">
                 <h1 className="heading">{this.props.message}</h1>
                 <p>{this.state.name}, Vous étudiez sur la version {this.props.version} de Réact.</p>
-                <p><input type="text" value={this.state.name} /></p>   
+                <p><input type="text" value={this.state.name} onChange={this.handleChange}/></p>   
           </div>
         )
       }
