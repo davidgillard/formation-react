@@ -38,14 +38,15 @@
 
 
 
-    const Bonjour = () => (
+    const Bonjour = ({message, version}) => (
           <div id="title">
-             <h1 className="heading">Bonjour de Réact</h1>
+            <h1 className="heading">{message}</h1>
+            <p>Vous étudiez sur la version {version} de Réact</p>
           </div>    
     )
 
       ReactDOM.render(
-    <BonjourClass message="Bonjour de Réact" version={16}/>,
+    <Bonjour message="Bonjour de Réact 16" version={16}/>,
         document.getElementById('react-root')
     )
     </script>
